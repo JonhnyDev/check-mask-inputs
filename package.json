@@ -1,0 +1,48 @@
+{
+  "name": "check-mask-inputs",
+  "version": "1.0.0",
+  "description": "Check Mask Inputs It is a library for validating and formatting numeric input data some pre-made formats and providing a customized format.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --declaration",
+    "dev": "nodemon --watch . --exec \"ts-node app/example.ts\" -e ts",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonhnyDev/check-mask-inputs.git"
+  },
+  "keywords": [
+    "mask",
+    "cpf",
+    "cep",
+    "check",
+    "isvalid",
+    "cnpj",
+    "phone",
+    "birth",
+    "react",
+    "nodeJS",
+    "maskinputs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonhnyDev/check-mask-inputs/issues"
+  },
+  "homepage": "https://github.com/JonhnyDev/check-mask-inputs#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^18.15.12",
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "cep-promise": "^4.4.0"
+  }
+}
