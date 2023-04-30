@@ -3,7 +3,7 @@ import { CheckMaskInput } from '../src/index'
 const CNPJ = CheckMaskInput.cnpj("75114595000105")
 console.log('CNPJ', CNPJ.getValue())
 console.log('CNPJ', CNPJ.isValid())
-const PHONE =  CheckMaskInput.phone("8880000111")
+const PHONE =  CheckMaskInput.phone("1112223333")
 console.log('PHONE', PHONE.getValue())
 console.log('PHONE', PHONE.isValid())
 const PHONE_BR =  CheckMaskInput.phoneBR("21996173823")
