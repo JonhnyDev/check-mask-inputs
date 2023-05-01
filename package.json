@@ -1,6 +1,6 @@
 {
   "name": "check-mask-inputs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Check Mask Inputs It is a library for validating and formatting numeric input data some pre-made formats and providing a customized format.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

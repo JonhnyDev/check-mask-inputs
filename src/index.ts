@@ -14,13 +14,19 @@ interface CEP {
   neighborhood: string,
   street: string,
   service: string
-} 
-interface ResponseCEP {
+}
+interface ValidResponseCEP {
     getValue: () => string
     isValid: () => boolean
-    extraData: false | CEP
+    extraData: CEP
 }
 
+interface InvalidResponseCEP {
+    getValue: () => string
+    isValid: () => boolean
+    extraData: false
+}
+type ResponseCEP = ValidResponseCEP | InvalidResponseCEP;
 class CheckMaskInput {
     public static cpf(value: Value): Response {
         const cleanValue = this.clean(value)

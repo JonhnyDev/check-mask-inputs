@@ -120,7 +120,7 @@ describe('birthBR', () => {
         expect(cepCheck.getValue()).toBe('05010-000');
         expect(cepCheck.isValid()).toBe(true);
         expect(cepCheck.extraData).toBeTruthy();
-        if(cepCheck?.extraData){
+        if(cepCheck.extraData){
           expect(cepCheck.extraData.cep).toEqual('05010000');
           expect(cepCheck.extraData.city).toEqual('São Paulo');
           expect(cepCheck.extraData.neighborhood).toEqual('Perdizes');
