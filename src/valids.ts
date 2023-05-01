@@ -1,5 +1,6 @@
-import cep from 'cep-promise'
 
+import axios from 'axios';
+import { CEP } from './index'
 class isValid {
     public static cpf(value: string){
         let cpf = value.replace(/[^\d]+/g, '');
@@ -67,9 +68,13 @@ class isValid {
 
     public static async cep(value: string){
         try {
-            const response = await cep(value, { timeout: 10000 });
-            return response;
+            const response = await axios.get(`https://viacep.com.br/ws/${value}/json/`);
+            if(response.status === 200){
+                return response.data as CEP
+            }
+            return false;
         } catch (error){
+            console.log(error)
             return false;
         }
     }

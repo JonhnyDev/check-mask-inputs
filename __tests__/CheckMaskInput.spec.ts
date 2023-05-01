@@ -121,11 +121,11 @@ describe('birthBR', () => {
         expect(cepCheck.isValid()).toBe(true);
         expect(cepCheck.extraData).toBeTruthy();
         if(cepCheck.extraData){
-          expect(cepCheck.extraData.cep).toEqual('05010000');
-          expect(cepCheck.extraData.city).toEqual('São Paulo');
-          expect(cepCheck.extraData.neighborhood).toEqual('Perdizes');
-          expect(cepCheck.extraData.street).toEqual('Rua Caiubi');
-          expect(cepCheck.extraData.state).toEqual('SP');
+          expect(cepCheck.extraData.cep).toEqual('05010-000');
+          expect(cepCheck.extraData.localidade).toEqual('São Paulo');
+          expect(cepCheck.extraData.bairro).toEqual('Perdizes');
+          expect(cepCheck.extraData.logradouro).toEqual('Rua Caiubi');
+          expect(cepCheck.extraData.uf).toEqual('SP');
         }
       });
 

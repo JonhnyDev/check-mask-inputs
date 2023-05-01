@@ -71,12 +71,11 @@ console.log('CUSTOM', CUSTOM.isValid()) // Output: true
     console.log('CEP', CEP.getValue()) // Output: 22041-011
     console.log('CEP', await CEP.isValid()) // Output: true
     console.log('CEP', CEP.extraData) /* Output: {
-                                            cep: '05010000',
-                                            state: 'SP',
-                                            city: 'São Paulo',
-                                            neighborhood: 'Perdizes',
-                                            street: 'Rua Caiubi',
-                                            service: 'brasilapi'
+                                            cep: '05010-000',
+                                            uf: 'SP',
+                                            localidade: 'São Paulo',
+                                            bairro: 'Perdizes',
+                                            logradouro: 'Rua Caiubi'
                                         }*/
 })()
 ```

@@ -7,13 +7,13 @@ interface Response {
     isValid: () => boolean
     extraData: false
 }
-interface CEP {
+export interface CEP {
   cep: string,
-  state: string,
-  city: string,
-  neighborhood: string,
-  street: string,
-  service: string
+  logradouro: string,
+  complemento: string,
+  bairro: string,
+  localidade: string,
+  uf: string
 }
 interface ValidResponseCEP {
     getValue: () => string
@@ -85,7 +85,7 @@ class CheckMaskInput {
     public static async cep(value: Value): Promise<ResponseCEP> {
         const cleanValue = this.clean(value)
         const formatValue = this.mask(cleanValue, "99999-999")
-        const checkCEP = await isValid.cep(formatValue)
+        const checkCEP = await isValid.cep(cleanValue)
         return {
             getValue: () => formatValue,
             isValid: () => checkCEP ? true : false,
@@ -113,7 +113,6 @@ class CheckMaskInput {
 
         for (let i = 0; i < value.length && maskIndex < maskLength; i++) {
             const maskChar = mask.charAt(maskIndex);
-
             if (maskChar === '9') {
                 maskedValue += value.charAt(i);
             } else {

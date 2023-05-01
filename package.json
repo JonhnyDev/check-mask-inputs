@@ -1,6 +1,6 @@
 {
   "name": "check-mask-inputs",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "Check Mask Inputs It is a library for validating and formatting numeric input data some pre-made formats and providing a customized format.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,7 +26,7 @@
     "nodeJS",
     "maskinputs"
   ],
-  "author": "",
+  "author": "Jonathan Abas",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JonhnyDev/check-mask-inputs/issues"
@@ -43,6 +43,6 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "cep-promise": "^4.4.0"
+    "axios": "^1.4.0"
   }
 }
