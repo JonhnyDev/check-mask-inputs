@@ -23,7 +23,15 @@ console.log('CUSTOM', CUSTOM.getValue())
 console.log('CUSTOM', CUSTOM.isValid())
 
 ;(async () => {
-    const CEP = CheckMaskInput.cep("22763153") // "22041011" | 22041011
+    const CEP = await CheckMaskInput.cep("05010000") // "05010000" | 05010000
     console.log('CEP', CEP.getValue())
-    console.log('CEP', await CEP.isValid())
+    console.log('CEP', CEP.isValid())
+    if(CEP.extraData){
+        console.log('cep', CEP.extraData.cep)
+        console.log('city', CEP.extraData.city)
+        console.log('neighborhood', CEP.extraData.neighborhood)
+        console.log('service', CEP.extraData.service)
+        console.log('street', CEP.extraData.street)
+        console.log('state', CEP.extraData.state)
+    }
 })()
