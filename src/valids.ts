@@ -67,8 +67,8 @@ class isValid {
 
     public static async cep(value: string){
         try {
-            await cep(value, { timeout: 10000 });
-            return true;
+            const response = await cep(value, { timeout: 10000 });
+            return response;
         } catch (error){
             return false;
         }

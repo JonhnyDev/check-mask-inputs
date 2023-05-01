@@ -116,16 +116,24 @@ describe('birthBR', () => {
     describe('cep', () => {
       test('valid CEP', async () => {
         const cep = '05010000';
-        const cepCheck = CheckMaskInput.cep(cep);
+        const cepCheck = await CheckMaskInput.cep(cep);
         expect(cepCheck.getValue()).toBe('05010-000');
-        expect(await cepCheck.isValid()).toBe(true);
+        expect(cepCheck.isValid()).toBe(true);
+        expect(cepCheck.extraData).toBeTruthy();
+        if(cepCheck?.extraData){
+          expect(cepCheck.extraData.cep).toEqual('05010000');
+          expect(cepCheck.extraData.city).toEqual('São Paulo');
+          expect(cepCheck.extraData.neighborhood).toEqual('Perdizes');
+          expect(cepCheck.extraData.street).toEqual('Rua Caiubi');
+          expect(cepCheck.extraData.state).toEqual('SP');
+        }
       });
 
       test('invalid CEP', async () => {
         const cep = '12345';
-        const cepCheck = CheckMaskInput.cep(cep);
+        const cepCheck = await CheckMaskInput.cep(cep);
         expect(cepCheck.getValue()).toBe('12345');
-        expect(await cepCheck.isValid()).toBe(false);
+        expect(cepCheck.isValid()).toBe(false);
       });
     });
 

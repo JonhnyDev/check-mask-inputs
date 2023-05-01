@@ -26,7 +26,7 @@ or
 const { CheckMaskInput } = require('check-mask-input');
 ```
 # INPUT FORMAT FORM
-## it doesn't need to use components to work, it works with pure input and in components because it handles changing values ​​in real time.
+# works on any controlled component
 ```js
         <input
             placeholder="000.000.000-00"
@@ -70,6 +70,14 @@ console.log('CUSTOM', CUSTOM.isValid()) // Output: true
     const CEP = CheckMaskInput.cep("22763153") // "22041011" | 22041011
     console.log('CEP', CEP.getValue()) // Output: 22041-011
     console.log('CEP', await CEP.isValid()) // Output: true
+    console.log('CEP', CEP.extraData) /* Output: {
+                                            cep: '05010000',
+                                            state: 'SP',
+                                            city: 'São Paulo',
+                                            neighborhood: 'Perdizes',
+                                            street: 'Rua Caiubi',
+                                            service: 'brasilapi'
+                                        }*/
 })()
 ```
 
